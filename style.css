@@ -1,0 +1,67 @@
+/* Styles généraux */
+body {    
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+}
+
+
+/* Styles spécifiques aux sections */
+section {
+    padding: 40px 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Styles pour les images miniatures */
+/*.project-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Styles pour le formulaire de contact */
+/*.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input[type="text"], .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}*/
