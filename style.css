@@ -13,6 +13,10 @@ header, footer {
     padding: 30px;
 }
 
+nav{
+    margin-top: 100px;
+
+}
 
 /* Styles spécifiques aux sections */
 section {
@@ -23,16 +27,16 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+}
+nav ul li:nth-child(2) {
+    margin-right: 300px;
+
 }
 
-nav ul li {
-    display: inline;
-}
 
-nav ul li:last-child{
-    margin-right: 0;
-    margin-left: 0;
-}
+
+
 
 /* Styles pour les images miniatures */
 /*.project-thumbnail {
