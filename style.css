@@ -1,68 +1,165 @@
-/* Styles généraux */
-body {    
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
-}
-a{
-    text-decoration: none;
-    color: #fff;
-}
-header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px;
+    box-sizing: border-box;
 }
 
-nav{
-    margin-top: 100px;
-
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    padding: 0 20px;
 }
 
-/* Styles spécifiques aux sections */
-section {
-    padding: 40px 20px;
+header {
+    text-align: center;
+    background: #0073e6;
+    color: white;
+    padding: 20px 0;
 }
-nav ul {
-    list-style-type: none;
-    padding: 0;
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: center;
+    padding: 10px 0;
 }
 
+header nav ul li {
+    margin: 0 15px;
+}
 
-
-
-
-
-/* Styles pour les images miniatures */
-/*.project-thumbnail {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #333;
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    transition: background 0.3s ease;
 }
 
-/* Styles pour le formulaire de contact */
-/*.contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+header nav ul li a:hover {
+    background: #005bb5;
 }
 
-.contact-form input[type="text"], .contact-form textarea {
-    width: 100%;
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #0073e6;
+}
+
+ul {
+    list-style: none;
+    margin: 10px 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
     padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.contact-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+form button {
+    margin-top: 10px;
+    background: #0073e6;
+    color: white;
     border: none;
+    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
-}*/
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #005bb5;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+/* Animation de transition globale */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+section:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+/* Effet de transition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style du bouton "Retour en haut" */
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+/* Effet de carte pour chaque article de projets */
+#projects article {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

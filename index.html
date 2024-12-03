@@ -3,49 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Alpha LY</title>
+    <title>Portfolio - Alpha LY</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Portfolio de Alpha LY</h1>
+        <h1>Alpha LY</h1>
+        <p>Alternance dans le domaine du réseau</p>
         <nav>
             <ul>
-                <li><a href="#presentation">PRESENTATION</a></li>
-                <li><a href="#parcours">PARCOURS</a></li>
-                <li><a href="#competences">COMPETENCES</a></li>
-                <li><a href="#projets">PROJETS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="CV_Alpha_LY.pdf" download>Télécharger CV</a></li>
             </ul>
         </nav>
     </header>
-
-    <section id="presentation">
-
-        <h2>Présentation</h2>
-        <p></p>
-        
-
-    <section id="parcours">
-
+    <section id="about">
+        <h2>À propos</h2>
+        <p>Je suis Alpha LY, étudiant en BTS SIO, motivé par les technologies réseau et prêt à contribuer au sein d'une équipe professionnelle.</p>
+        <ul>
+            <li><strong>Âge :</strong> 22 ans</li>
+            <li><strong>Localisation :</strong> Avranches, France</li>
+            <li><strong>Langues :</strong> Français, Anglais, Espagnol</li>
+        </ul>
     </section>
-
-    <section id="competences">
-
+    <section id="skills">
+        <h2>Compétences</h2>
+        <ul>
+            <li>Hyperviseurs : ProxMox, VirtualBox</li>
+            <li>Programmation : Python, JavaScript, HTML, CSS</li>
+            <li>Gestion réseau : Création de domaine, AD/DS, mappage de lecteurs réseau</li>
+            <li>Outils : Git/GitHub, MySQL</li>
+        </ul>
     </section>
-
-    <section id="projets">
-
+    <section id="projects">
+        <h2>Projets</h2>
+        <article>
+            <h3>Création et configuration d'AD/DS</h3>
+            <p>Configuration d'Active Directory pour gérer un domaine, intégrer des machines et créer des utilisateurs.</p>
+        </article>
+        <article>
+            <h3>Réseaux et protocoles</h3>
+            <p>Connaissances des adresses IP, création de VM sous VirtualBox et ProxMox, mappage de lecteurs réseau.</p>
+        </article>
+        <article>
+            <h3>Création de domaine</h3>
+            <p>Configuration d'un domaine SIO1 avec gestion d'utilisateurs et contrôle des accès via AD/DS.</p>
+        </article>
+        <article>
+            <h3>Configuration de VirtualHost avec Apache2</h3>
+            <p>
+                Installation d'Apache2 et configuration de VirtualHost pour lier des noms de domaine à des adresses IP.
+                Grâce à cette configuration, il est possible d'accéder à un service en utilisant directement le nom de domaine
+                dans le navigateur.
+            </p>
+        </article>
+        <article>
+            <h3>Installation et configuration de GLPI</h3>
+            <p>
+                Mise en place et configuration de GLPI pour la gestion des ressources informatiques et le suivi des tickets
+                d'incidents. Ce projet implique l'installation des dépendances nécessaires et la personnalisation de l'outil
+                selon les besoins.
+            </p>
+        </article>
     </section>
-
+    
     <section id="contact">
-
+        <h2>Contact</h2>
+        <form action="#" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
     </section>
-
     <footer>
-
+        <p>&copy; 2024 Alpha LY. Tous droits réservés.</p>
     </footer>
-
 </body>
 </html>
