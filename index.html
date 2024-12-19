@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Alpha LY</h1>
@@ -23,27 +25,65 @@
     </header>
     <section id="about">
         <h2>À propos</h2>
-        <p>Je suis Alpha LY, étudiant en BTS SIO, motivé par les technologies réseau et prêt à contribuer au sein d'une équipe professionnelle.</p>
+        <p>
+            Je m'appelle <strong>Mamadou Alpha LY</strong>, j'ai 22 ans et je suis passionné par l'informatique, en
+            particulier le domaine des réseaux.
+            Depuis mon plus jeune âge, j'ai toujours été curieux d'en apprendre plus sur les technologies.
+            Après une première année en BTS SIO (Services Informatiques aux Organisations) option SLAM, je me suis
+            réorienté vers l'option SISR, qui correspond davantage à mes intérêts pour les infrastructures et les
+            réseaux.
+        </p>
         <ul>
             <li><strong>Âge :</strong> 22 ans</li>
             <li><strong>Localisation :</strong> Avranches, France</li>
             <li><strong>Langues :</strong> Français, Anglais, Espagnol</li>
         </ul>
     </section>
-    <section id="skills">
-        <h2>Compétences</h2>
+    <section id="education">
+        <h2>Formation</h2>
         <ul>
-            <li>Hyperviseurs : ProxMox, VirtualBox</li>
-            <li>Programmation : Python, JavaScript, HTML, CSS</li>
-            <li>Gestion réseau : Création de domaine, AD/DS, mappage de lecteurs réseau</li>
-            <li>Outils : Git/GitHub, MySQL</li>
+            <li>
+                <strong>BTS SIO (Services Informatiques aux Organisations) – Option SLAM</strong> (1ère année)
+                <p>
+                    J'ai acquis des bases en développement logiciel avant de me réorienter vers le réseau.
+                </p>
+            </li>
+            <li>
+                <strong>BTS SIO – Option SISR</strong> (Actuellement en 1ère année)
+                <p>
+                    J'apprends à administrer des infrastructures réseaux, gérer des systèmes virtualisés et maîtriser
+                    les bases des technologies réseau.
+                </p>
+            </li>
         </ul>
     </section>
+
+    <section id="skills">
+        <h2>Compétences Techniques</h2>
+        <div>
+            <h3>Développement</h3>
+            <ul>
+                <li>Langages : Python, C#, JavaScript</li>
+                <li>Création de scripts pour automatiser des tâches</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Réseaux</h3>
+            <ul>
+                <li>Virtualisation : Configuration de machines virtuelles avec Proxmox et VirtualBox</li>
+                <li>Active Directory : Installation, configuration et gestion</li>
+                <li>Gestion des domaines : Création et administration d’un domaine personnel</li>
+                <li>Adressage IP : Maîtrise des sous-réseaux et du routage</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="projects">
         <h2>Projets</h2>
         <article>
             <h3>Création et configuration d'AD/DS</h3>
-            <p>Configuration d'Active Directory pour gérer un domaine, intégrer des machines et créer des utilisateurs.</p>
+            <p>Configuration d'Active Directory pour gérer un domaine, intégrer des machines et créer des utilisateurs.
+            </p>
         </article>
         <article>
             <h3>Réseaux et protocoles</h3>
@@ -57,18 +97,36 @@
             <h3>Configuration de VirtualHost avec Apache2</h3>
             <p>
                 Installation d'Apache2 et configuration de VirtualHost pour lier des noms de domaine à des adresses IP.
-                Grâce à cette configuration, il est possible d'accéder à un service en utilisant directement le nom de domaine
+                Grâce à cette configuration, il est possible d'accéder à un service en utilisant directement le nom de
+                domaine
                 dans le navigateur.
             </p>
         </article>
         <article>
+            <h3>Création d’un environnement virtualisé</h3>
+            <p>
+                Mise en place de machines virtuelles sous Proxmox et VirtualBox pour configurer un Windows Server gérant
+                un Active Directory et un domaine personnel.
+            </p>
+        </article>
+        
+        <article>
             <h3>Installation et configuration de GLPI</h3>
             <p>
-                Mise en place et configuration de GLPI pour la gestion des ressources informatiques et le suivi des tickets
-                d'incidents. Ce projet implique l'installation des dépendances nécessaires et la personnalisation de l'outil
+                Mise en place et configuration de GLPI pour la gestion des ressources informatiques et le suivi des
+                tickets
+                d'incidents. Ce projet implique l'installation des dépendances nécessaires et la personnalisation de
+                l'outil
                 selon les besoins.
             </p>
         </article>
+    </section>
+    <section id="objectives">
+        <h2>Objectifs Professionnels</h2>
+        <ul>
+            <li><strong>Court terme :</strong> Trouver une alternance dans le domaine des réseaux pour développer mes compétences tout en poursuivant mes études.</li>
+            <li><strong>Long terme :</strong> Devenir ingénieur en administration réseau et travailler de manière indépendante en tant qu'expert ou consultant.</li>
+        </ul>
     </section>
     
     <section id="contact">
@@ -86,5 +144,7 @@
     <footer>
         <p>&copy; 2024 Alpha LY. Tous droits réservés.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

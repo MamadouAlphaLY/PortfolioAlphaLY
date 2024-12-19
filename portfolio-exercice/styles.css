@@ -1,0 +1,155 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* En-tête */
+  header {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header .menu li {
+    margin: 0 15px;
+  }
+  
+  header .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  header .menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section principale */
+  main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main h1 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 10px;
+  }
+  
+  main h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  main p, main ul {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  main .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  
+  main .btn:hover {
+    background-color: #e69500;
+  }
+  
+  .project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Compétences */
+  .skills-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills-list li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Formulaire de contact */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFA500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #e69500;
+  }
+  
+  /* Pied de page */
+  footer {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+  

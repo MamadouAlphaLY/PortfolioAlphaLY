@@ -1,23 +1,25 @@
+console.log("Script chargé !");
 document.addEventListener("DOMContentLoaded", () => {
     // Animation pour le défilement fluide
     const links = document.querySelectorAll("nav ul li a");
 
     links.forEach(link => {
         link.addEventListener("click", event => {
-            event.preventDefault();
-            const targetId = link.getAttribute("href").substring(1);
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            const targetId = link.getAttribute("href").substring(1); // Retirer le '#' du lien
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                // Défilement fluide vers l'élément
                 window.scrollTo({
-                    top: targetElement.offsetTop - 50, // Ajuster pour la hauteur de l'en-tête
+                    top: targetElement.offsetTop - 50, // Ajuste pour la hauteur de l'en-tête
                     behavior: "smooth"
                 });
             }
         });
     });
 
-    // Animation au survol
+    // Animation au survol des sections
     const sections = document.querySelectorAll("section");
     sections.forEach(section => {
         section.addEventListener("mouseover", () => {
@@ -43,18 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.style.borderRadius = "50%";
     backToTop.style.cursor = "pointer";
     backToTop.style.boxShadow = "0 2px 5px rgba(0,0,0,0.2)";
-    backToTop.style.display = "none";
-    backToTop.style.zIndex = "1000";
+    backToTop.style.display = "none"; // Cache le bouton par défaut
+    backToTop.style.zIndex = "1000"; // S'assurer qu'il reste au-dessus des autres éléments
     document.body.appendChild(backToTop);
 
+    // Afficher le bouton "Retour en haut" lorsque l'utilisateur défile
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
-            backToTop.style.display = "block";
+            backToTop.style.display = "block"; // Affiche le bouton
         } else {
-            backToTop.style.display = "none";
+            backToTop.style.display = "none"; // Cache le bouton
         }
     });
 
+    // Action pour le bouton "Retour en haut"
     backToTop.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
@@ -62,3 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section) => {
+        section.addEventListener("mouseover"), () => {
+            section.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
+    }}});
