@@ -1,0 +1,148 @@
+/* Styles CSS pour le portfolio dynamique avec amélioration visuelle */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(120deg, #1a1a1a, #333);
+    scroll-behavior: smooth;
+    background-attachment: fixed;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #1a1a1a, #333);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00aaff;
+    transform: scale(1.1);
+}
+
+/* Section globale */
+section {
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: transform 0.4s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation visible */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-in-out;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 4rem;
+    border-radius: 12px;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+#about h2:hover {
+    color: #00aaff;
+}
+
+/* Projets Section */
+#projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#projets .projet {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#projets .projet:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#projets img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #333, #1a1a1a);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Buttons and Links */
+a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0088cc;
+    text-shadow: 0 0 5px #00aaff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    #projets {
+        grid-template-columns: 1fr;
+    }
+}
