@@ -1,150 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Alpha LY</title>
+    <title>Portfolio Alpha LY</title>
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-</head>
+    <style>
+        .about-photo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
+        .about-photo img {
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .about-photo img:hover {
+            transform: scale(1.1);
+        }
+
+        .certification {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .certification-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .certification-item a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .certification-item a:hover {
+            color: #0088cc;
+            text-shadow: 0 0 5px #00aaff;
+        }
+    </style>
+</head>
 <body>
-    <header>
-        <h1>Alpha LY</h1>
-        <p>Alternance dans le domaine du réseau</p>
+    <!-- Header -->
+    <header id="header">
         <nav>
             <ul>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#project-professionnel">Projet Professionnel</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#formations">Formation</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#interets">Centres d’intérêt</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="CV_Alpha_LY.pdf" download>Télécharger CV</a></li>
             </ul>
         </nav>
+        <div class="header-content">
+            <h1>Alpha LY</h1>
+            <p>Étudiant en BTS Services Informatiques aux Organisations</p>
+        </div>
     </header>
+
+    <!-- Section À propos -->
     <section id="about">
-        <h2>À propos</h2>
-        <p>
-            Je m'appelle <strong>Mamadou Alpha LY</strong>, j'ai 22 ans et je suis passionné par l'informatique, en
-            particulier le domaine des réseaux.
-            Depuis mon plus jeune âge, j'ai toujours été curieux d'en apprendre plus sur les technologies.
-            Après une première année en BTS SIO (Services Informatiques aux Organisations) option SLAM, je me suis
-            réorienté vers l'option SISR, qui correspond davantage à mes intérêts pour les infrastructures et les
-            réseaux.
-        </p>
+        <div class="about-photo">
+            <img src="assets/photoID.jpg" alt="Photo de Alpha LY">
+        </div>
+        <h2>À propos de moi</h2>
+        <p>Je m'appelle Alpha LY, âgé de 23 ans, passionné par les technologies informatiques et les réseaux. Actuellement étudiant en BTS SIO, je cherche des opportunités de stage pour approfondir mes compétences.</p>    
+        <a href="assets/CV_Alpha_LY.pdf" download="CV_Alpha_LY.pdf">Télécharger mon CV</a> |
+        <a href="assets/CV_Alpha_LY.pdf" target="_blank">Consulter mon CV</a>
+    </section>
+
+    <!-- Section Projet Professionnel -->
+    <section id="project-professionnel">
+        <h2>Mon Projet Professionnel</h2>
+        <p>Mon objectif est de devenir un expert en administration réseau et en cybersécurité. Je souhaite intégrer une entreprise où je pourrai appliquer mes connaissances, continuer à apprendre, et évoluer dans un environnement stimulant.</p>
+    </section>
+
+    <!-- Section Expérience -->
+    <section id="experience">
+        <h2>Expériences Professionnelles</h2>
         <ul>
-            <li><strong>Âge :</strong> 22 ans</li>
-            <li><strong>Localisation :</strong> Avranches, France</li>
-            <li><strong>Langues :</strong> Français, Anglais, Espagnol</li>
+            <li>
+                <strong>Burger King, Avranches</strong> (Depuis novembre 2024)<br>
+                Travail en restauration rapide, gestion d’équipe et service client.
+            </li>
+            <li>
+                <strong>Plongeur, Corse</strong> (Été 2024)<br>
+                Responsabilités : Lavage de vaisselle, maintien de la propreté en cuisine, et travail d’équipe.
+            </li>
+            <li>
+                <strong>Projets académiques :</strong>
+                <ul>
+                    <li>Configuration d'Active Directory (AD/DS), création de domaines, gestion des utilisateurs, et mappage de lecteurs réseau.</li>
+                    <li>Création de machines virtuelles avec VirtualBox et ProxMox.</li>
+                </ul>
+            </li>
         </ul>
     </section>
-    <section id="education">
+
+    <!-- Section Compétences -->
+    <section id="competences">
+        <h2>Compétences</h2>
+        <ul>
+            <li>Langages : Python, JavaScript, HTML, CSS</li>
+            <li>Base de données : MySQL</li>
+            <li>Outils : Docker, Git, ProxMox, VirtualBox</li>
+            <li>Cybersécurité : Gestion AD/DS, protocoles réseaux, sécurité LDAP</li>
+            <li>Langues : Français (Courant), Anglais (Intermédiaire), Espagnol (Notions)</li>
+        </ul>
+    </section>
+
+    <!-- Section Formation -->
+    <section id="formations">
         <h2>Formation</h2>
         <ul>
-            <li>
-                <strong>BTS SIO (Services Informatiques aux Organisations) – Option SLAM</strong> (1ère année)
-                <p>
-                    J'ai acquis des bases en développement logiciel avant de me réorienter vers le réseau.
-                </p>
-            </li>
-            <li>
-                <strong>BTS SIO – Option SISR</strong> (Actuellement en 1ère année)
-                <p>
-                    J'apprends à administrer des infrastructures réseaux, gérer des systèmes virtualisés et maîtriser
-                    les bases des technologies réseau.
-                </p>
-            </li>
+            <li><strong>BTS Services Informatiques aux Organisations</strong> - Lycée Notre Dame de la Providence, Avranches (Depuis 2024)</li>
+            <li><strong>Baccalauréat</strong> - Lycée Lamine Gueye, Dakar, Sénégal (2021-2022)</li>
         </ul>
     </section>
 
-    <section id="skills">
-        <h2>Compétences Techniques</h2>
-        <div>
-            <h3>Développement</h3>
-            <ul>
-                <li>Langages : Python, C#, JavaScript</li>
-                <li>Création de scripts pour automatiser des tâches</li>
-            </ul>
-        </div>
-        <div>
-            <h3>Réseaux</h3>
-            <ul>
-                <li>Virtualisation : Configuration de machines virtuelles avec Proxmox et VirtualBox</li>
-                <li>Active Directory : Installation, configuration et gestion</li>
-                <li>Gestion des domaines : Création et administration d’un domaine personnel</li>
-                <li>Adressage IP : Maîtrise des sous-réseaux et du routage</li>
-            </ul>
+    <!-- Section Certifications -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certification">
+            <div class="certification-item">
+                <p><strong>Certification ANSSI en Cybersécurité</strong></p>
+                <a href="assets/ANSSI_Certification.pdf" download>Télécharger</a>
+            </div>
+            <div class="certification-item">
+                <p><strong>Diplôme BTS Services Informatiques</strong></p>
+                <a href="assets/BTS_Diplome.pdf" download>Télécharger</a>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projets</h2>
-        <article>
-            <h3>Création et configuration d'AD/DS</h3>
-            <p>Configuration d'Active Directory pour gérer un domaine, intégrer des machines et créer des utilisateurs.
-            </p>
-        </article>
-        <article>
-            <h3>Réseaux et protocoles</h3>
-            <p>Connaissances des adresses IP, création de VM sous VirtualBox et ProxMox, mappage de lecteurs réseau.</p>
-        </article>
-        <article>
-            <h3>Création de domaine</h3>
-            <p>Configuration d'un domaine SIO1 avec gestion d'utilisateurs et contrôle des accès via AD/DS.</p>
-        </article>
-        <article>
-            <h3>Configuration de VirtualHost avec Apache2</h3>
-            <p>
-                Installation d'Apache2 et configuration de VirtualHost pour lier des noms de domaine à des adresses IP.
-                Grâce à cette configuration, il est possible d'accéder à un service en utilisant directement le nom de
-                domaine
-                dans le navigateur.
-            </p>
-        </article>
-        <article>
-            <h3>Création d’un environnement virtualisé</h3>
-            <p>
-                Mise en place de machines virtuelles sous Proxmox et VirtualBox pour configurer un Windows Server gérant
-                un Active Directory et un domaine personnel.
-            </p>
-        </article>
-        
-        <article>
-            <h3>Installation et configuration de GLPI</h3>
-            <p>
-                Mise en place et configuration de GLPI pour la gestion des ressources informatiques et le suivi des
-                tickets
-                d'incidents. Ce projet implique l'installation des dépendances nécessaires et la personnalisation de
-                l'outil
-                selon les besoins.
-            </p>
-        </article>
-    </section>
-    <section id="objectives">
-        <h2>Objectifs Professionnels</h2>
+    <!-- Section Projets Réalisés -->
+    <section id="projets">
+        <h2>Projets Réalisés</h2>
         <ul>
-            <li><strong>Court terme :</strong> Trouver une alternance dans le domaine des réseaux pour développer mes compétences tout en poursuivant mes études.</li>
-            <li><strong>Long terme :</strong> Devenir ingénieur en administration réseau et travailler de manière indépendante en tant qu'expert ou consultant.</li>
+            <li>Création et configuration d’un Active Directory (AD/DS)</li>
+            <li>Déploiement de machines virtuelles avec VirtualBox et ProxMox</li>
+            <li>Configuration réseau pour projets académiques (gestion IP, liens LDAP, etc.)</li>
         </ul>
     </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="#" method="post">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2024 Alpha LY. Tous droits réservés.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
 
+    <!-- Section Centres d’intérêt -->
+    <section id="interets">
+        <h2>Centres d’intérêt</h2>
+        <p>Technologies informatiques, réseaux, développement web, cybersécurité, football, voyages, et exploration culinaire.</p>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <h2>Me Contacter</h2>
+        <p>Email : <a href="mailto:mamadoualphaly0552@gmail.com">mamadoualphaly0552@gmail.com</a></p>
+        <p>Téléphone : +33 6 41 83 17 96</p>
+        <p>Réseaux : <a href="https://www.linkedin.com/in/Mamadou%20Alpha%20LY" target="_blank">LinkedIn</a> | <a href="https://github.com/MamadouAlphaLY" target="_blank">GitHub</a></p>
+    </section>
+
+    <!-- Section Mentions Légales -->
+    <section id="mentions-legales">
+        <h2>Mentions Légales</h2>
+        <p>Ce portfolio respecte le RGPD. Les cookies et données collectées sont uniquement utilisés pour améliorer l’expérience utilisateur.</p>
+        <p>Sources : Template inspiré de <a href="https://julesmercier.fr" target="_blank">julesmercier.fr</a>. Images et contenus personnels.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Alpha LY. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                const offset = 80; // Hauteur de l'en-tête fixe
+                const topPosition = targetSection.offsetTop - offset;
+
+                window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth',
+                });
+            });
+        });
+    </script>
+</body>
 </html>

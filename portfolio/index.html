@@ -4,11 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Alpha LY</title>
-    <!-- GSAP Library-->
+    <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <style>
+        .about-photo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-photo img {
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .about-photo img:hover {
+            transform: scale(1.1);
+        }
+
+        .certification {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .certification-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .certification-item a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .certification-item a:hover {
+            color: #0088cc;
+            text-shadow: 0 0 5px #00aaff;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -34,13 +85,12 @@
 
     <!-- Section À propos -->
     <section id="about">
+        <div class="about-photo">
+            <img src="assets/photoID.jpg" alt="Photo de Alpha LY">
+        </div>
         <h2>À propos de moi</h2>
-        <p>Je m'appelle Alpha LY, âgé de 23 ans, passionné par les technologies informatiques et les réseaux. Actuellement étudiant en BTS SIO, je cherche des opportunités de stage pour approfondir mes compétences.</p>
-        <p>Email : <a href="mailto:mamadoualphaly0552@gmail.com">mamadoualphaly0552@gmail.com</a></p>
-        <p>Téléphone : +33 6 41 83 17 96</p>
-        <p>Adresse : 4 Rue du Baron d’Orsenne, Avranches (50300)</p>
-        <p><a href="https://www.linkedin.com/in/Mamadou%20Alpha%20LY" target="_blank">LinkedIn</a> | <a href="https://github.com/MamadouAlphaLY" target="_blank">GitHub</a></p>
-        <a href="assets/CV_Alpha_LY.pdf" download>Télécharger mon CV</a> |
+        <p>Je m'appelle Alpha LY, âgé de 23 ans, passionné par les technologies informatiques et les réseaux. Actuellement étudiant en BTS SIO, je cherche des opportunités de stage pour approfondir mes compétences.</p>    
+        <a href="assets/CV_Alpha_LY.pdf" download="CV_Alpha_LY.pdf">Télécharger mon CV</a> |
         <a href="assets/CV_Alpha_LY.pdf" target="_blank">Consulter mon CV</a>
     </section>
 
@@ -57,6 +107,10 @@
             <li>
                 <strong>Burger King, Avranches</strong> (Depuis novembre 2024)<br>
                 Travail en restauration rapide, gestion d’équipe et service client.
+            </li>
+            <li>
+                <strong>Plongeur, Corse</strong> (Été 2024)<br>
+                Responsabilités : Lavage de vaisselle, maintien de la propreté en cuisine, et travail d’équipe.
             </li>
             <li>
                 <strong>Projets académiques :</strong>
@@ -92,9 +146,16 @@
     <!-- Section Certifications -->
     <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
-            <li>Certification ANSSI en Cybersécurité (Prochainement)</li>
-        </ul>
+        <div class="certification">
+            <div class="certification-item">
+                <p><strong>Certification ANSSI en Cybersécurité</strong></p>
+                <a href="assets/ANSSI_Certification.pdf" download>Télécharger</a>
+            </div>
+            <div class="certification-item">
+                <p><strong>Diplôme BTS Services Informatiques</strong></p>
+                <a href="assets/BTS_Diplome.pdf" download>Télécharger</a>
+            </div>
+        </div>
     </section>
 
     <!-- Section Projets Réalisés -->
@@ -131,5 +192,22 @@
     <footer>
         <p>&copy; 2025 Alpha LY. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                const offset = 80; // Hauteur de l'en-tête fixe
+                const topPosition = targetSection.offsetTop - offset;
+
+                window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth',
+                });
+            });
+        });
+    </script>
 </body>
 </html>

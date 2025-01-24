@@ -1,203 +1,148 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Styles CSS pour le portfolio dynamique avec amélioration visuelle */
 
 body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
-    padding: 0 20px;
+    background: linear-gradient(120deg, #1a1a1a, #333);
+    scroll-behavior: smooth;
+    background-attachment: fixed;
 }
 
+/* Header */
 header {
-    text-align: center;
-    background: #0073e6;
+    background: linear-gradient(90deg, #1a1a1a, #333);
     color: white;
-    padding: 20px 0;
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-}
-
-header nav ul li {
-    margin: 0 15px;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
-    background: #005bb5;
+    color: #00aaff;
+    transform: scale(1.1);
 }
 
+/* Section globale */
 section {
-    margin: 20px 0;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: #0073e6;
-}
-
-ul {
-    list-style: none;
-    margin: 10px 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin: 10px 0 5px;
-}
-
-form input,
-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    margin-top: 10px;
-    background: #0073e6;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
-form button:hover {
-    background: #005bb5;
+section:hover {
+    transform: translateY(-5px);
 }
 
-footer {
+/* Animation visible */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-in-out;
+}
+
+/* About Section */
+#about {
     text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
-    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 4rem;
+    border-radius: 12px;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+#about h2:hover {
+    color: #00aaff;
+}
+
+/* Projets Section */
+#projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#projets .projet {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-}
-/* Animation de transition globale */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-in-out forwards;
-}
-
-section:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-section:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-section:nth-child(4) {
-    animation-delay: 0.9s;
-}
-
-/* Effet de transition */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Style du bouton "Retour en haut" */
-button {
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #005bb5;
-}
-/* Effet de carte pour chaque article de projets */
-#projects article {
-    padding: 20px;
-    margin-bottom: 15px;
-    background: #f9f9f9;
-    border-radius: 8px;
+    padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#projects article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-/* Section Générale */
-section {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+#projets .projet:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Titres des sections */
-section h2 {
-    color: #0073e6;
-    margin-bottom: 15px;
-}
-
-/* Listes */
-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-section ul li {
-    margin-bottom: 10px;
-}
-
-/* Articles */
-#projects article {
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
+#projets img {
+    max-width: 100%;
     border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#projects article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #333, #1a1a1a);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Buttons and Links */
+a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0088cc;
+    text-shadow: 0 0 5px #00aaff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    #projets {
+        grid-template-columns: 1fr;
+    }
 }
