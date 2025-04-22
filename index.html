@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Mamadou Alpha LY | Recherche d'Alternance</h1>
+            <br><h1>Mamadou Alpha LY | Recherche d'Alternance</h1></br>
             <nav>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
@@ -42,28 +42,30 @@
 
     <section id="competences" class="section">
         <h2>Compétences</h2>
-        <div class="skills">
-            <div class="skill-box">
-                <h3>Virtualisation & Sauvegarde</h3>
-                <p>Création de machines virtuelles sous Proxmox. Installation et configuration de PBS pour les sauvegardes.</p>
+        <div class="skills-scroll">
+            <div class="skills">
+                <div class="skill-box">
+                    <h3>Virtualisation & Sauvegarde</h3>
+                    <p>Création de machines virtuelles sous Proxmox. Installation et configuration de PBS pour les sauvegardes.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Conteneurisation</h3>
+                    <p>Utilisation de Docker, création de conteneurs dans Proxmox pour simuler différents environnements.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Déploiement de Systèmes</h3>
+                    <p>Déploiement en unicast et multicast via Fog Project sur VM et matériel réel.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Simulations Réseau</h3>
+                    <p>Nombreux TP réalisés sur Cisco Packet Tracer pour comprendre les fondements des réseaux.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Accès à distance</h3>
+                    <p>Mise en place d’accès distant sur une machine Windows pour la gestion à distance.</p>
+                </div>
             </div>
-            <div class="skill-box">
-                <h3>Conteneurisation</h3>
-                <p>Utilisation de Docker, création de conteneurs dans Proxmox pour simuler différents environnements.</p>
-            </div>
-            <div class="skill-box">
-                <h3>Déploiement de Systèmes</h3>
-                <p>Déploiement en unicast et multicast via Fog Project sur VM et matériel réel.</p>
-            </div>
-            <div class="skill-box">
-                <h3>Simulations Réseau</h3>
-                <p>Nombreux TP réalisés sur Cisco Packet Tracer pour comprendre les fondements des réseaux.</p>
-            </div>
-            <div class="skill-box">
-                <h3>Accès à distance</h3>
-                <p>Mise en place d’accès distant sur une machine Windows pour la gestion à distance.</p>
-            </div>
-        </div>
+        </div>        
     </section>
 
     <section id="projets" class="section">
@@ -99,6 +101,35 @@
         <h2>Centres d’intérêt</h2>
         <p>Technologies informatiques, réseaux, développement web, cybersécurité, football, voyages, et exploration culinaire.</p>
     </section>
+    <section id="veille" class="section">
+        <h2>Veille Technologique</h2>
+        <div id="rss-feed" class="rss-container">
+            <p>Chargement des dernières actualités...</p>
+        </div>
+    
+        <script>
+            fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.theverge.com/rss/index.xml")
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById("rss-feed");
+                    container.innerHTML = "";
+                    data.items.slice(0, 5).forEach(item => {
+                        const article = document.createElement("div");
+                        article.className = "rss-item";
+                        article.innerHTML = `
+                            <a href="${item.link}" target="_blank"><strong>${item.title}</strong></a>
+                            <p>${new Date(item.pubDate).toLocaleDateString()}</p>
+                        `;
+                        container.appendChild(article);
+                    });
+                })
+                .catch(error => {
+                    document.getElementById("rss-feed").innerText = "Impossible de charger le flux.";
+                    console.error(error);
+                });
+        </script>
+    </section>
+    
 
     <section id="contact" class="section">
         <h2>Contact</h2>
@@ -109,21 +140,5 @@
     <footer>
         <p>&copy; 2025 Alpha LY. Tous droits réservés.</p>
     </footer>
-    <script>
-        document.querySelectorAll('header nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                const offset = 80; // Hauteur de l'en-tête fixe
-                const topPosition = targetSection.offsetTop - offset;
-
-                window.scrollTo({
-                    top: topPosition,
-                    behavior: 'smooth',
-                });
-            });
-        });
-    </script>
 </body>
 </html>

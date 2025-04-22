@@ -120,3 +120,38 @@ iframe {
         height: 400px;
     }
 }
+/* Section Veille Technologique */
+.rss-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.rss-item a {
+    color: #252f88;
+    text-decoration: none;
+}
+
+.rss-item a:hover {
+    color: #ff9800;
+}
+.skills-scroll {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.skills {
+    display: flex;
+    gap: 20px;
+    min-width: max-content;
+    scroll-snap-type: x mandatory;
+}
+
+.skill-box {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+}
