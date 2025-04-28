@@ -107,29 +107,63 @@
             <p>Chargement des dernières actualités...</p>
         </div>
     
-        <script>
-            fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.theverge.com/rss/index.xml")
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById("rss-feed");
-                    container.innerHTML = "";
-                    data.items.slice(0, 5).forEach(item => {
-                        const article = document.createElement("div");
-                        article.className = "rss-item";
-                        article.innerHTML = `
-                            <a href="${item.link}" target="_blank"><strong>${item.title}</strong></a>
-                            <p>${new Date(item.pubDate).toLocaleDateString()}</p>
-                        `;
-                        container.appendChild(article);
+        <section id="veille" class="section">
+            <h2>Veille Technologique Automatique</h2>
+            <div class="veille-grid">
+                <div class="veille-block">
+                    <h3>Virtualisation (Virtualization Review)</h3>
+                    <div id="rss-virtualization"></div>
+                </div>
+                <div class="veille-block">
+                    <h3>Cybersécurité (The Hacker News)</h3>
+                    <div id="rss-cyber"></div>
+                </div>
+            </div>
+        
+            <script>
+                // Flux Virtualization Review
+                fetch("https://api.rss2json.com/v1/api.json?rss_url=https://virtualizationreview.com/rss-feeds/rss-list.aspx")
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById("rss-virtualization");
+                        container.innerHTML = "";
+                        data.items.slice(0, 5).forEach(item => {
+                            const article = document.createElement("div");
+                            article.className = "rss-item";
+                            article.innerHTML = `
+                                <a href="${item.link}" target="_blank"><strong>${item.title}</strong></a>
+                                <p>${new Date(item.pubDate).toLocaleDateString()}</p>
+                            `;
+                            container.appendChild(article);
+                        });
+                    })
+                    .catch(error => {
+                        document.getElementById("rss-virtualization").innerText = "Impossible de charger le flux.";
+                        console.error(error);
                     });
-                })
-                .catch(error => {
-                    document.getElementById("rss-feed").innerText = "Impossible de charger le flux.";
-                    console.error(error);
-                });
-        </script>
-    </section>
-    
+        
+                // Flux The Hacker News
+                fetch("https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/TheHackersNews")
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById("rss-cyber");
+                        container.innerHTML = "";
+                        data.items.slice(0, 5).forEach(item => {
+                            const article = document.createElement("div");
+                            article.className = "rss-item";
+                            article.innerHTML = `
+                                <a href="${item.link}" target="_blank"><strong>${item.title}</strong></a>
+                                <p>${new Date(item.pubDate).toLocaleDateString()}</p>
+                            `;
+                            container.appendChild(article);
+                        });
+                    })
+                    .catch(error => {
+                        document.getElementById("rss-cyber").innerText = "Impossible de charger le flux.";
+                        console.error(error);
+                    });
+            </script>
+        </section>    
 
     <section id="contact" class="section">
         <h2>Contact</h2>
